@@ -1,0 +1,64 @@
+input[type="radio"] {
+  display: none;
+}
+
+.toggle {
+  width: 50px;
+  height: 25px;
+  background: #a0a0a0;
+  border-radius: 25px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 20px;
+  position: relative;
+}
+
+.toggle::after {
+  content: "";
+  width: 21px;
+  height: 21px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s;
+}
+
+
+#toggle-red:checked + .toggle::after,
+#toggle-blue:checked + .toggle::after,
+#toggle-green:checked + .toggle::after,
+#toggle-black:checked + .toggle::after {
+  transform: translateX(25px);
+}
+
+
+#toggle-red:checked ~ .box {
+  background: darkred;
+  color: rgb(255, 255, 255);
+}
+
+#toggle-blue:checked ~ .box {
+  background: darkblue;
+  color: rgb(255, 255, 255);
+}
+
+#toggle-green:checked ~ .box {
+  background: green;
+  color: rgb(255, 255, 255);
+}
+
+#toggle-black:checked ~ .box {
+  background: black;
+  color: white;
+}
+
+.box {
+  padding: 280px;
+  margin: 0px;
+  background: #eee;
+  transition: 0.3s;
+  text-align: center;
+  font-weight: 700;
+}
